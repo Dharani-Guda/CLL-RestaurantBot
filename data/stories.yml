@@ -1,0 +1,300 @@
+version: "2.0"
+stories:
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: Story 5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: ask_location
+    entities:
+    - cuisine: Indian
+    - location: hyderabad
+  - action: action_custom_cuisine
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 6
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_is_your_name
+  - action: utter_what_is_your_name
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: kadapa
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: indian
+  - action: action_custom_cuisine
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 7
+  steps:
+  - intent: ask_location
+    entities:
+    - cuisine: Indian
+    - location: hyderabad
+  - action: action_custom_cuisine
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 8
+  steps:
+  - intent: ask_location
+    entities:
+    - cuisine: Indian
+    - location: hyderabad
+  - action: action_custom_cuisine
+- story: Story 11
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_cuisine
+    entities:
+    - cuisine: mexican
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: pune
+  - action: action_custom_cuisine
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 12
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_is_your_name
+  - action: utter_what_is_your_name
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: ask_location
+    entities:
+    - cuisine: Indian
+    - location: hyderabad
+  - action: action_custom_cuisine
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 13
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_is_your_name
+  - action: utter_what_is_your_name
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: dont_know_location
+  - action: utter_dont_know_location
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 14
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: deny
+  - action: utter_dont_know_location
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 3
+  steps:
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - action: utter_ask_location
+  - intent: dont_know_location
+  - action: utter_dont_know_location
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - action: action_custom_cuisine
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: ask_cuisine
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: chinese
+  - action: utter_restaurants
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_is_your_name
+  - action: utter_what_is_your_name
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - action: action_custom_cuisine
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 16
+  steps:
+  - intent: ask_location
+    entities:
+    - location: chennai
+  - action: utter_when_direct_location
+  - intent: restaurant
+  - action: action_custom_cuisine
+  - intent: ask_cuisine
+  - action: utter_restaurants
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 17
+  steps:
+  - action: utter_when_direct_location
+  - intent: ask_location
+    entities:
+    - location: chennai
+  - intent: not_restaurant
+  - action: utter_what_is_your_name
+  - action: utter_what_can_you_do
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 18
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - intent: current_location
+  - action: utter_current_location
+  - intent: affirm
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - action: utter_ask_location
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 19
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: current_location
+  - action: utter_current_location
+  - intent: dont_know_location
+  - action: utter_dont_know_location
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 20
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: no_cuisine_preference
+  - action: utter_best_cuisine
+  - intent: affirm
+  - action: action_custom_cuisine
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 15
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: no_cuisine_preference
+  - action: utter_best_cuisine
+  - intent: deny
+  - action: utter_not_best_cuisine
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story 9
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - action: utter_restaurants
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: ask_cuisine
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: chinese
+  - action: action_custom_cuisine
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
