@@ -153,7 +153,15 @@ stories:
   - intent: ask_cuisine
     entities:
     - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
   - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - urba Tadka
+      - Goilas Butter chicken
+      - Shiv sagar
+  - action: action_find_restaurants
   - intent: thankyou
   - action: utter_welcome
   - intent: ask_cuisine
@@ -298,3 +306,29 @@ stories:
   - action: utter_welcome
   - intent: goodbye
   - action: utter_goodbye
+- story: Story of first custom find restaurants
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: chennai
+  - action: utter_ask_cuisine
+  - slot_was_set:
+    - cuisine: indian
+  - intent: ask_cuisine
+    entities:
+    - cuisine: indian
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - urba Tadka
+      - Goilas Butter chicken
+      - Shiv sagar
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null

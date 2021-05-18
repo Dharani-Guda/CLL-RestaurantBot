@@ -42,7 +42,17 @@ intents:
 entities:
 - cuisine
 - location
-slots: {}
+slots:
+  cuisine:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  restaurants:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
 responses:
   utter_greet:
   - text: Hi, i am restaurant-bot.
@@ -81,7 +91,10 @@ responses:
   - text: May be you can visit our website  to see any cuisines you like.
   utter_current_location:
   - text: switch on your location in your device so that i can take your location.
+  utter_sorry_cuisine:
+  - text: Sorry,I cannot find the results for the cuisine you mentioned.May be you can visit our restaurant for more information.
 actions:
 - action_custom_cuisine
+- action_find_restaurants
 forms: {}
 e2e_actions: []

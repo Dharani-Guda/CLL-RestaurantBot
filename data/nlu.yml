@@ -156,6 +156,7 @@ nlu:
     - I am hungry.
     - fooodddd
     - yeah
+    - i am hungyr
 - intent: ask_location
   examples: |
     - i am at hyderabad
@@ -192,6 +193,8 @@ nlu:
     - i am in [chennai](location).
     - i am at [hyderabad](location).
     - Hey,i am in [chennai](location).
+    - i am in hyderabad
+    - [Hyderabad](location)
 - intent: dont_know_location
   examples: |
     - i don't know my location
@@ -250,6 +253,8 @@ nlu:
     - [Chinese]{"entity": "cuisine", "value": "chinese"}
     - pizza..
     - How about trying [italian](cuisine) food?
+    - [Indian](cuisine)
+    - [Italian]{"entity": "cuisine", "value": "italian"}
 - intent: no_cuisine_preference
   examples: |
     - i don't know what to eat
