@@ -132,6 +132,7 @@ nlu:
     - what's your name
     - What is your name?
     - what's your name?
+    - what is your name
 - intent: restaurant
   examples: |
     - i am searching for a restaurant
@@ -157,12 +158,16 @@ nlu:
     - fooodddd
     - yeah
     - i am hungyr
+    - yeah i knwo
+    - i am hungey
 - intent: ask_location
   examples: |
     - i am at hyderabad
     - i want some recommendations of restaurants in [mumbai](location)
+    - i want some recommendations of restaurants in [mumbei]{"entity": "location", "value": "mumbai"}
     - i want some recommendations of restaurants in [Mumbai]{"entity": "location", "value": "mumbai"}
     - i want some recommendations of restaurants in [Bombay]{"entity": "location", "value": "mumbai"}
+    - i want some recommendations of restaurants in [Bombai]{"entity": "location", "value": "mumbai"}
     - i want to order some food from [proddatur](location)
     - i want to order some food from [Proddatur]{"entity": "location", "value": "proddatur"}
     - may i know some good restaurants in [Pune]{"entity": "location", "value": "pune"}
@@ -170,11 +175,14 @@ nlu:
     - [kadapa](location)
     - [Kadapa]{"entity": "location", "value": "kadapa"}
     - can you suggest me some restaurants in [hyderabad](location)
+    - can you suggest me some restaurants in [China](location)
     - can you suggest me some restaurants in [Hyderabad]{"entity": "location", "value": "hyderabad"}
+    - can you suggest me some restaurants in [hyderabed]{"entity": "location", "value": "hyderabad"}
     - hope u help me to check some restaurants in [chennai](location)
     - hope u help me to check some restaurants in [Chennai]{"entity": "location", "value": "chennai"}
     - i am looking for some good food in [banglore](location)
     - i am looking for some good food in [Banglore]{"entity": "location", "value": "banglore"}
+    - i am looking for some good food in [Banglure]{"entity": "location", "value": "banglore"}
     - i am looking for some good food in [banagaluru]{"entity": "location", "value": "banglore"}
     - recommend me a restuarant in [vijayawada](location)
     - recommend me a restuarant in [Vijayawada]{"entity": "location", "value": "vijayawada"}
@@ -195,6 +203,16 @@ nlu:
     - Hey,i am in [chennai](location).
     - i am in hyderabad
     - [Hyderabad](location)
+    - i am in [chennai](location)
+    - jaipr
+    - [jaipur](location)
+    - bihar
+    - [hyderabad](location)
+    - i am at hyderabad i want to eat thai food
+    - i want to eat [italian](cuisine) and i am at [hyderabad](location)
+    - [hyderabad](location), [italian](cuisine)
+    - [ahmedabad](location)
+    - i want to eat [italian](cuisine) at [hyderabad](location)
 - intent: dont_know_location
   examples: |
     - i don't know my location
@@ -216,6 +234,8 @@ nlu:
     - can i look up suggestions without a location
     - i don't know
     - i am sorry i cannot do that.
+    - don't know
+    - don't knwo
 - intent: ask_cuisine
   examples: |
     - i am looking for [italian](cuisine) food
@@ -230,6 +250,7 @@ nlu:
     - i am a [Non-vegetarian]{"entity": "cuisine", "value": "non-vegetarian"}
     - i want [north-indian](cuisine) food
     - i want [chicken](cuisine)
+    - i want [Thai](cuisine)
     - i want [Chicken]{"entity": "cuisine", "value": "chicken"}
     - i am carving for [chinese](cuisine) food
     - i am carving for [Chinese]{"entity": "cuisine", "value": "chinese"} food
@@ -255,6 +276,12 @@ nlu:
     - How about trying [italian](cuisine) food?
     - [Indian](cuisine)
     - [Italian]{"entity": "cuisine", "value": "italian"}
+    - I like to eat [indian](cuisine)
+    - [itailian](cuisine)
+    - [korean](cuisine)
+    - thai
+    - i want to eat [biryani]{"entity": "cuisine", "value": "south indian"}
+    - thai food
 - intent: no_cuisine_preference
   examples: |
     - i don't know what to eat
@@ -275,6 +302,7 @@ nlu:
     - nothing in special
     - No,i am not
     - What cuisine is the best?
+    - don't know
 - intent: thankyou
   examples: |
     - Thank you
@@ -297,8 +325,10 @@ nlu:
     - near my location
 - synonym: mumbai
   examples: |
+    - mumbei
     - Mumbai
     - Bombay
+    - Bombai
 - synonym: proddatur
   examples: |
     - Proddatur
@@ -311,6 +341,7 @@ nlu:
 - synonym: hyderabad
   examples: |
     - Hyderabad
+    - hyderabed
     - secunderabad
     - kachiguda
     - madapur
@@ -320,6 +351,7 @@ nlu:
 - synonym: banglore
   examples: |
     - Banglore
+    - Banglure
     - banagaluru
 - synonym: vijayawada
   examples: |
@@ -332,6 +364,7 @@ nlu:
     - Italian
     - pasta
     - pizza
+    - itailian
 - synonym: mexican
   examples: |
     - Mexican

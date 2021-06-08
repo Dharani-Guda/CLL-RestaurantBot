@@ -53,6 +53,11 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
+  location:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
 responses:
   utter_greet:
   - text: Hi, i am restaurant-bot.
@@ -93,6 +98,8 @@ responses:
   - text: switch on your location in your device so that i can take your location.
   utter_sorry_cuisine:
   - text: Sorry,I cannot find the results for the cuisine you mentioned.May be you can visit our restaurant for more information.
+  utter_sorry_location:
+  - text: Sorry,our sevice is not available for the location that you provided.
 actions:
 - action_custom_cuisine
 - action_find_restaurants
