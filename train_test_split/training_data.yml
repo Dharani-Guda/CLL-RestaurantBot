@@ -1,0 +1,331 @@
+version: "2.0"
+nlu:
+- intent: bot_challenge
+  examples: |
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you a bot?
+- intent: thankyou
+  examples: |
+    - Thank you
+    - you helped me a lot
+    - thx
+    - appreciate it
+    - thanks
+- intent: affirm
+  examples: |
+    - correct
+    - indeed
+    - that sounds good
+    - of course
+    - y
+    - ok let's try that.
+    - yes
+- intent: deny
+  examples: |
+    - never
+    - I don't think so
+    - n
+    - not really
+    - no
+    - don't like that
+- intent: current_location
+  examples: |
+    - use my location
+    - around my location
+    - take my current location.
+    - is it ok to turn on google maps
+    - near my location
+    - find something in my current location
+    - i want to find restaurants near me.
+- intent: mood_great
+  examples: |
+    - amazing
+    - I am going to save the world
+    - I am amazing
+    - so good
+    - I am great
+    - so so perfect
+    - feeling like a king
+    - great
+    - perfect
+    - I am feeling very good
+    - super stoked
+    - extremely good
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am disappointed
+    - so saad
+    - very sad
+    - extremly sad
+    - I don't feel very well
+    - not very good
+    - sad
+    - super sad
+    - so sad
+    - not good
+- intent: what_can_you_do
+  examples: |
+    - help me with something you can do
+    - how do u help when people reach out to you
+    - how can you help me
+    - i want to know what you know
+    - dude,what are you good at
+    - what is your work
+    - what's your speciality
+    - what is your capability
+    - what can you do
+    - thing that only you can do is
+    - what can you do?
+- intent: what_is_your_name
+  examples: |
+    - what's your name
+    - ok then,let me know your name
+    - name plz
+    - bot,do you have special name
+    - What is your name?
+    - Hey,your name
+    - what should i call you
+    - what's your name?
+    - how to call you
+    - name is
+    - Dude,what is your name?
+    - what is your name?
+    - Hey,what's your name?
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - see you around
+    - Bye
+    - have a nice day
+    - see you later
+    - cu
+    - bye bye
+    - bye
+    - good night
+    - see u
+    - ok then,bye
+    - good by
+    - goodbye
+- intent: no_cuisine_preference
+  examples: |
+    - no idea
+    - i don't know what to eat
+    - i can't figure out
+    - any food is fine
+    - help me choose my food
+    - anything that is delicious
+    - suggest me some cuisine
+    - don't know
+    - like anything
+    - hmmm
+    - What cuisine is the best?
+    - any suggestions in cuisines
+    - order me anything
+    - find me something
+    - No,i am not
+    - i have no idea
+- intent: greet
+  examples: |
+    - hello
+    - let's go
+    - Hi,How are you?
+    - dude
+    - morning
+    - hey there
+    - good morning
+    - hey
+    - Hey,wassup?
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi
+    - Hi
+    - good evening
+- intent: dont_know_location
+  examples: |
+    - i am not sure of my location
+    - it's not secure for me to tell my location
+    - is it possible to check without telling my location
+    - i think i can't help you with my location
+    - is it possible not to tell my location
+    - i don't know my address
+    - don't knwo
+    - i don't know where i am right now
+    - i don't want you to know my location
+    - i don't know my location
+    - i don't know
+    - i don't want to tell you my location
+    - i am not sure where i am
+    - i am sorry i can't help u with my location
+    - i don't know where i am
+    - can i look up suggestions without a location
+- intent: restaurant
+  examples: |
+    - help me find something delicious
+    - i need food
+    - any recommendations for good restaurants
+    - i am looking for delicious food
+    - I am hungry.
+    - i am searching for food
+    - yeah i knwo
+    - yeah
+    - i am hungyr
+    - find me a restaurant
+    - food
+    - i am famished
+    - i am not in a good mood,i want some good food
+    - any suggestions for good restaurants
+    - i am searching for a restaurant
+    - i am hungry
+    - i am carving for some food
+    - fooodddd
+    - i am hungy
+    - find me something delicious
+    - may i get some recommendations for good food
+- intent: ask_cuisine
+  examples: |
+    - i want to check for [Mexican]{"entity": "cuisine", "value": "mexican"}
+    - i want to eat [pasta]{"entity": "cuisine", "value": "italian"}
+    - i am a [vegetarian](cuisine)
+    - i want some [spicy](cuisine) food
+    - [Chinese]{"entity": "cuisine", "value": "chinese"}
+    - How about trying [italian](cuisine) food?
+    - i am looking for [Italian]{"entity": "cuisine", "value": "italian"} food
+    - i am a [non-vegetarian](cuisine)
+    - I want to eat [Italian]{"entity": "cuisine", "value": "italian"}
+    - some [curry]{"entity": "cuisine", "value": "south indian"}
+    - [itailian](cuisine)
+    - thai
+    - i am carving for [Chinese]{"entity": "cuisine", "value": "chinese"} food
+    - i want [south indian](cuisine)
+    - i am a [Non-vegetarian]{"entity": "cuisine", "value": "non-vegetarian"}
+    - i am carving for [chinese](cuisine) food
+    - i am looking for [italian](cuisine) food
+    - [Italian]{"entity": "cuisine", "value": "italian"}
+    - i want [Chicken]{"entity": "cuisine", "value": "chicken"}
+    - my stomach wants [korean](cuisine) food
+    - i would like to order some [traditional-indian](cuisine) food
+    - i want to choose [biryani]{"entity": "cuisine", "value": "south indian"}
+    - my stomach wants [Korean]{"entity": "cuisine", "value": "korean"} food
+    - i want to eat [biryani]{"entity": "cuisine", "value": "south indian"}
+    - pizza..
+    - [korean](cuisine)
+    - i want to change my cuisine again
+    - some [deserts](cuisine) maybe
+    - i want to eat [pasta]{"entity": "cuisine", "value": "italian"}.
+    - i want [Thai](cuisine)
+    - i want [north-indian](cuisine) food
+    - [pizza]{"entity": "cuisine", "value": "italian"},plz
+    - hmm,how about [italian](cuisine)
+    - [biryani]{"entity": "cuisine", "value": "south indian"}
+    - i want to check for [mexican](cuisine)
+- intent: ask_location
+  examples: |
+    - i am at hyderabad
+    - i want to order some food from [proddatur](location)
+    - [hyderabad](location), [italian](cuisine)
+    - where can i find a good restaurant in [secunderabad]{"entity": "location", "value": "hyderabad"}
+    - i am in [chennai](location).
+    - Hey,i am in [chennai](location)
+    - [Hyderabad](location)
+    - can you suggest me some restaurants in [hyderabad](location)
+    - where can i find a good food in [kurnool](location)
+    - i think i am at [guntur](location)
+    - i am looking for some good food in [Banglure]{"entity": "location", "value": "banglore"}
+    - [ahmedabad](location)
+    - hope u help me to check some restaurants in [Chennai]{"entity": "location", "value": "chennai"}
+    - i am looking for some good food in [banglore](location)
+    - i am at hyderabad i want to eat thai food
+    - i am in [hyderabad](location).
+    - i want some recommendations of restaurants in [mumbai](location)
+    - i am looking for some good food in [banagaluru]{"entity": "location", "value": "banglore"}
+    - may i know some good restaurants in [Pune]{"entity": "location", "value": "pune"}
+    - i am based in [Pune]{"entity": "location", "value": "pune"}.
+    - i am in hyderabad
+    - i am in [chennai](location)
+    - [kadapa](location)
+    - hope u help me to check some restaurants in [chennai](location)
+    - i want some recommendations of restaurants in [Bombai]{"entity": "location", "value": "mumbai"}
+    - can you suggest me some restaurants in [hyderabed]{"entity": "location", "value": "hyderabad"}
+    - recommend me a restuarant in [vijayawada](location)
+    - i want to order some food from [Proddatur]{"entity": "location", "value": "proddatur"}
+    - around [Delhi]{"entity": "location", "value": "delhi"}
+    - i am at [hyderabad](location).
+    - i am looking for some good food in [Banglore]{"entity": "location", "value": "banglore"}
+    - bihar
+    - can you suggest me some restaurants in [Hyderabad]{"entity": "location", "value": "hyderabad"}
+    - can you suggest me some restaurants in [China](location)
+    - i want to eat [italian](cuisine) and i am at [hyderabad](location)
+    - i want some recommendations of restaurants in [Bombay]{"entity": "location", "value": "mumbai"}
+    - [jaipur](location)
+    - around [delhi](location)
+    - i want some recommendations of restaurants in [Mumbai]{"entity": "location", "value": "mumbai"}
+    - Hey,i am in [chennai](location).
+    - nearby [kachiguda]{"entity": "location", "value": "hyderabad"}
+- synonym: mumbai
+  examples: |
+    - mumbei
+    - Mumbai
+    - Bombay
+    - Bombai
+- synonym: proddatur
+  examples: |
+    - Proddatur
+- synonym: pune
+  examples: |
+    - Pune
+- synonym: kadapa
+  examples: |
+    - Kadapa
+- synonym: hyderabad
+  examples: |
+    - Hyderabad
+    - hyderabed
+    - secunderabad
+    - kachiguda
+    - madapur
+- synonym: chennai
+  examples: |
+    - Chennai
+- synonym: banglore
+  examples: |
+    - Banglore
+    - Banglure
+    - banagaluru
+- synonym: vijayawada
+  examples: |
+    - Vijayawada
+- synonym: delhi
+  examples: |
+    - Delhi
+- synonym: italian
+  examples: |
+    - Italian
+    - pasta
+    - pizza
+    - itailian
+- synonym: mexican
+  examples: |
+    - Mexican
+- synonym: south indian
+  examples: |
+    - biryani
+    - curry
+- synonym: vegetarian
+  examples: |
+    - Vegetarian
+- synonym: non-vegetarian
+  examples: |
+    - Non-vegetarian
+- synonym: chicken
+  examples: |
+    - Chicken
+- synonym: chinese
+  examples: |
+    - Chinese
+- synonym: korean
+  examples: |
+    - Korean

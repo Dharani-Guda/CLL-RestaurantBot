@@ -1,0 +1,570 @@
+[
+  {
+    "text": "let's go",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.41568273305892944
+    }
+  },
+  {
+    "text": "have a nice day",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "no_cuisine_preference",
+      "confidence": 0.20446324348449707
+    }
+  },
+  {
+    "text": "don't like that",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "no_cuisine_preference",
+      "confidence": 0.4464329183101654
+    }
+  },
+  {
+    "text": "not really",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.8933361768722534
+    }
+  },
+  {
+    "text": "feeling like a king",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "no_cuisine_preference",
+      "confidence": 0.3826957941055298
+    }
+  },
+  {
+    "text": "I am feeling very good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9818869829177856
+    }
+  },
+  {
+    "text": "super stoked",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9798346757888794
+    }
+  },
+  {
+    "text": "my day was horrible",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "dont_know_location",
+      "confidence": 0.7038217186927795
+    }
+  },
+  {
+    "text": "unhappy",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7022590637207031
+    }
+  },
+  {
+    "text": "how can you help me",
+    "intent": "what_can_you_do",
+    "intent_prediction": {
+      "name": "what_is_your_name",
+      "confidence": 0.5261426568031311
+    }
+  },
+  {
+    "text": "yeah",
+    "intent": "restaurant",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9255437254905701
+    }
+  },
+  {
+    "text": "yeah i knwo",
+    "intent": "restaurant",
+    "intent_prediction": {
+      "name": "dont_know_location",
+      "confidence": 0.9548664093017578
+    }
+  },
+  {
+    "text": "Dominos",
+    "intent": "ask_cuisine",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.45351988077163696
+    }
+  },
+  {
+    "text": "i want some spicy food",
+    "intent": "ask_cuisine",
+    "intent_prediction": {
+      "name": "restaurant",
+      "confidence": 0.9956074953079224
+    }
+  },
+  {
+    "text": "i prefer kfc",
+    "intent": "ask_cuisine",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.6117508411407471
+    }
+  },
+  {
+    "text": "i can't figure out",
+    "intent": "no_cuisine_preference",
+    "intent_prediction": {
+      "name": "dont_know_location",
+      "confidence": 0.8623958230018616
+    }
+  },
+  {
+    "text": "hmmm",
+    "intent": "no_cuisine_preference",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.25433170795440674
+    }
+  },
+  {
+    "text": "No,i am not",
+    "intent": "no_cuisine_preference",
+    "intent_prediction": {
+      "name": "dont_know_location",
+      "confidence": 0.3770086169242859
+    }
+  },
+  {
+    "text": "i want to find restaurants near me.",
+    "intent": "current_location",
+    "intent_prediction": {
+      "name": "restaurant",
+      "confidence": 0.9976760745048523
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9965497255325317
+    }
+  },
+  {
+    "text": "wonderful",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7040973901748657
+    }
+  },
+  {
+    "text": "extremly sad",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.6167687773704529
+    }
+  },
+  {
+    "text": "how can i address you",
+    "intent": "what_is_your_name",
+    "intent_prediction": {
+      "name": "what_can_you_do",
+      "confidence": 0.9780721068382263
+    }
+  },
+  {
+    "text": "i am carving for some food",
+    "intent": "restaurant",
+    "intent_prediction": {
+      "name": "ask_cuisine",
+      "confidence": 0.9983338713645935
+    }
+  },
+  {
+    "text": "i am famished",
+    "intent": "restaurant",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5116565823554993
+    }
+  },
+  {
+    "text": "i think i am at guntur",
+    "intent": "ask_location",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4655091166496277
+    }
+  },
+  {
+    "text": "i want to eat pasta",
+    "intent": "ask_cuisine",
+    "intent_prediction": {
+      "name": "restaurant",
+      "confidence": 0.9870532751083374
+    }
+  },
+  {
+    "text": "i want to eat pasta.",
+    "intent": "ask_cuisine",
+    "intent_prediction": {
+      "name": "restaurant",
+      "confidence": 0.9870532751083374
+    }
+  },
+  {
+    "text": "find me something",
+    "intent": "no_cuisine_preference",
+    "intent_prediction": {
+      "name": "restaurant",
+      "confidence": 0.7975475788116455
+    }
+  },
+  {
+    "text": "don't know",
+    "intent": "no_cuisine_preference",
+    "intent_prediction": {
+      "name": "dont_know_location",
+      "confidence": 0.9977362155914307
+    }
+  },
+  {
+    "text": "is it ok to turn on google maps",
+    "intent": "current_location",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.37829098105430603
+    }
+  },
+  {
+    "text": "Hey,wassup?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.3704112470149994
+    }
+  },
+  {
+    "text": "wassup",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.42957136034965515
+    }
+  },
+  {
+    "text": "c ya",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.7741819024085999
+    }
+  },
+  {
+    "text": "that sounds good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.1894717514514923
+    }
+  },
+  {
+    "text": "so good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.5146955251693726
+    }
+  },
+  {
+    "text": "what's your strength",
+    "intent": "what_can_you_do",
+    "intent_prediction": {
+      "name": "what_is_your_name",
+      "confidence": 0.8801754117012024
+    }
+  },
+  {
+    "text": "i want to know what you know",
+    "intent": "what_can_you_do",
+    "intent_prediction": {
+      "name": "no_cuisine_preference",
+      "confidence": 0.8667298555374146
+    }
+  },
+  {
+    "text": "nearby kachiguda",
+    "intent": "ask_location",
+    "intent_prediction": {
+      "name": "current_location",
+      "confidence": 0.783639132976532
+    }
+  },
+  {
+    "text": "i want to change my cuisine again",
+    "intent": "ask_cuisine",
+    "intent_prediction": {
+      "name": "no_cuisine_preference",
+      "confidence": 0.9513643980026245
+    }
+  },
+  {
+    "text": "i want something to eat",
+    "intent": "no_cuisine_preference",
+    "intent_prediction": {
+      "name": "restaurant",
+      "confidence": 0.8302059173583984
+    }
+  },
+  {
+    "text": "help me choose my food",
+    "intent": "no_cuisine_preference",
+    "intent_prediction": {
+      "name": "ask_cuisine",
+      "confidence": 0.9027266502380371
+    }
+  },
+  {
+    "text": "appreciate it",
+    "intent": "thankyou",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.37676143646240234
+    }
+  },
+  {
+    "text": "thx",
+    "intent": "thankyou",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5660221576690674
+    }
+  },
+  {
+    "text": "Hi,How are you?",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "what_can_you_do",
+      "confidence": 0.986416220664978
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.999308168888092
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2720250189304352
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.48166102170944214
+    }
+  },
+  {
+    "text": "I don't think so",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "dont_know_location",
+      "confidence": 0.9935699105262756
+    }
+  },
+  {
+    "text": "extremely good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9546136856079102
+    }
+  },
+  {
+    "text": "I am disappointed",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "restaurant",
+      "confidence": 0.5093534588813782
+    }
+  },
+  {
+    "text": "help me with something you can do",
+    "intent": "what_can_you_do",
+    "intent_prediction": {
+      "name": "dont_know_location",
+      "confidence": 0.5424451231956482
+    }
+  },
+  {
+    "text": "what is your work",
+    "intent": "what_can_you_do",
+    "intent_prediction": {
+      "name": "what_is_your_name",
+      "confidence": 0.960902750492096
+    }
+  },
+  {
+    "text": "i am not in a good mood,i want some good food",
+    "intent": "restaurant",
+    "intent_prediction": {
+      "name": "ask_location",
+      "confidence": 0.9994226694107056
+    }
+  },
+  {
+    "text": "bihar",
+    "intent": "ask_location",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5859907865524292
+    }
+  },
+  {
+    "text": "don't know",
+    "intent": "dont_know_location",
+    "intent_prediction": {
+      "name": "no_cuisine_preference",
+      "confidence": 0.9893127679824829
+    }
+  },
+  {
+    "text": "don't knwo",
+    "intent": "dont_know_location",
+    "intent_prediction": {
+      "name": "no_cuisine_preference",
+      "confidence": 0.9082475900650024
+    }
+  },
+  {
+    "text": "you helped me a lot",
+    "intent": "thankyou",
+    "intent_prediction": {
+      "name": "what_can_you_do",
+      "confidence": 0.9248831272125244
+    }
+  },
+  {
+    "text": "around my location",
+    "intent": "current_location",
+    "intent_prediction": {
+      "name": "dont_know_location",
+      "confidence": 0.693199872970581
+    }
+  },
+  {
+    "text": "cu",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8020042777061462
+    }
+  },
+  {
+    "text": "n",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.46294891834259033
+    }
+  },
+  {
+    "text": "I am going to save the world",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "no_cuisine_preference",
+      "confidence": 0.6516838073730469
+    }
+  },
+  {
+    "text": "I don't feel very well",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "dont_know_location",
+      "confidence": 0.8803917765617371
+    }
+  },
+  {
+    "text": "not good",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.43143269419670105
+    }
+  },
+  {
+    "text": "dude,what are you good at",
+    "intent": "what_can_you_do",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4143293797969818
+    }
+  },
+  {
+    "text": "i am starving",
+    "intent": "restaurant",
+    "intent_prediction": {
+      "name": "ask_cuisine",
+      "confidence": 0.42172250151634216
+    }
+  },
+  {
+    "text": "i want to eat",
+    "intent": "restaurant",
+    "intent_prediction": {
+      "name": "ask_cuisine",
+      "confidence": 0.8049802780151367
+    }
+  },
+  {
+    "text": "some deserts maybe",
+    "intent": "ask_cuisine",
+    "intent_prediction": {
+      "name": "ask_location",
+      "confidence": 0.9388563632965088
+    }
+  },
+  {
+    "text": "some curry",
+    "intent": "ask_cuisine",
+    "intent_prediction": {
+      "name": "current_location",
+      "confidence": 0.6618120074272156
+    }
+  },
+  {
+    "text": "i don't know what to eat",
+    "intent": "no_cuisine_preference",
+    "intent_prediction": {
+      "name": "dont_know_location",
+      "confidence": 0.4769267737865448
+    }
+  },
+  {
+    "text": "anything that is delicious",
+    "intent": "no_cuisine_preference",
+    "intent_prediction": {
+      "name": "restaurant",
+      "confidence": 0.9985280632972717
+    }
+  }
+]

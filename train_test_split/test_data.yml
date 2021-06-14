@@ -1,0 +1,157 @@
+version: "2.0"
+nlu:
+- intent: bot_challenge
+  examples: |
+    - are you a human?
+- intent: thankyou
+  examples: |
+    - thank you very much
+    - thank you
+- intent: affirm
+  examples: |
+    - ok
+- intent: deny
+  examples: |
+    - No
+    - no way
+- intent: current_location
+  examples: |
+    - current location
+    - near me
+- intent: mood_great
+  examples: |
+    - so perfect
+    - wonderful
+- intent: mood_unhappy
+  examples: |
+    - I'm so sad
+    - I am sad
+    - unhappy
+- intent: what_can_you_do
+  examples: |
+    - hey what can you do for me
+    - what's your strength
+    - what do you know
+- intent: what_is_your_name
+  examples: |
+    - how can i address you
+    - what is your name
+    - what name have you got form your master
+- intent: goodbye
+  examples: |
+    - c ya
+    - see you
+    - cee you later
+    - ok then bye
+- intent: no_cuisine_preference
+  examples: |
+    - i want something to eat
+    - anything is fine
+    - nothing in special
+- intent: greet
+  examples: |
+    - wassup
+    - Hi bot
+    - moin
+    - hello there
+- intent: dont_know_location
+  examples: |
+    - i am sorry i cannot do that.
+    - i cannot tell you my location right now
+    - dude,i don't want you to know
+    - don't know
+    - how about not telling you my location
+- intent: restaurant
+  examples: |
+    - i want to eat
+    - i want to order food
+    - i am starving
+    - i want food
+    - restaurant
+- intent: ask_cuisine
+  examples: |
+    - i am a [Vegetarian]{"entity": "cuisine", "value": "vegetarian"}
+    - i want to eat [mexican](cuisine) food.
+    - i want [chicken](cuisine)
+    - [Dominos](cuisine)
+    - [indian](cuisine) food
+    - i prefer [kfc](cuisine)
+    - I like to eat [indian](cuisine)
+    - [Indian](cuisine)
+    - thai food
+- intent: ask_location
+  examples: |
+    - i want some recommendations of restaurants in [mumbei]{"entity": "location", "value": "mumbai"}
+    - [hyderabad](location)
+    - i want to eat [italian](cuisine) at [hyderabad](location)
+    - I want to eat [Indian](cuisine) food and i am in [hyderabad](location).
+    - recommend me a restuarant in [Vijayawada]{"entity": "location", "value": "vijayawada"}
+    - Then,I want to eat [Indian](cuisine) food and i am in [hyderabad](location).
+    - jaipr
+    - [Kadapa]{"entity": "location", "value": "kadapa"}
+    - i am at [madapur](location)
+    - may i know some good restaurants in [pune](location)
+- synonym: mumbai
+  examples: |
+    - mumbei
+    - Mumbai
+    - Bombay
+    - Bombai
+- synonym: proddatur
+  examples: |
+    - Proddatur
+- synonym: pune
+  examples: |
+    - Pune
+- synonym: kadapa
+  examples: |
+    - Kadapa
+- synonym: hyderabad
+  examples: |
+    - Hyderabad
+    - hyderabed
+    - secunderabad
+    - kachiguda
+    - madapur
+- synonym: chennai
+  examples: |
+    - Chennai
+- synonym: banglore
+  examples: |
+    - Banglore
+    - Banglure
+    - banagaluru
+- synonym: vijayawada
+  examples: |
+    - Vijayawada
+- synonym: delhi
+  examples: |
+    - Delhi
+- synonym: italian
+  examples: |
+    - Italian
+    - pasta
+    - pizza
+    - itailian
+- synonym: mexican
+  examples: |
+    - Mexican
+- synonym: south indian
+  examples: |
+    - biryani
+    - curry
+- synonym: vegetarian
+  examples: |
+    - Vegetarian
+- synonym: non-vegetarian
+  examples: |
+    - Non-vegetarian
+- synonym: chicken
+  examples: |
+    - Chicken
+- synonym: chinese
+  examples: |
+    - Chinese
+- synonym: korean
+  examples: |
+    - Korean

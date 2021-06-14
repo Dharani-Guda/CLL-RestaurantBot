@@ -159,7 +159,8 @@ nlu:
     - yeah
     - i am hungyr
     - yeah i knwo
-    - i am hungey
+    - i am hungy
+    - i am famished
 - intent: ask_location
   examples: |
     - i am at hyderabad
