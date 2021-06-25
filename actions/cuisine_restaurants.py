@@ -55,8 +55,8 @@ def find_cuisine(entity_id,entity_type):
     cuisine=random.choice(top_cuisine)
     return cuisine
 
-def restaurant_search(entity_id,entity_type,cuisine):
-    url = "https://developers.zomato.com/api/v2.1/search?count=10&cuisine="+cuisine+"&entity_id="+str(entity_id)+"&entity_type="+entity_type+"&sort=ratings&order=asc"
+def restaurant_search(entity_id,entity_type,cuisine,radius,establishment,category):
+    url = url = "https://developers.zomato.com/api/v2.1/search?count=5&cuisine="+cuisine+"&entity_id="+str(entity_id)+"&entity_type="+entity_type+"&radius="+str(radius)+"&establishment_type="+establishment+"&category="+category
     payload={}
     headers = {
     'user-key': 'dc4f13f34b2754f1b044d01e36008001',
@@ -69,7 +69,10 @@ def restaurant_search(entity_id,entity_type,cuisine):
     c=0
     for i in restaurant:
         if(i["restaurant"]["name"] not in restaurants and c!=5):
-            restaurants.append(i["restaurant"]["name"])
+            restaurants.append("Restaurant : "+i["restaurant"]["name"]+" ; Address : "
+                            +i["restaurant"]["location"]["address"]+" ; Phone number : "
+                            +i["restaurant"]["phone_numbers"]+" ; User ratings : "
+                            +i["restaurant"]["user_rating"]["aggregate_rating"])
             c+=1
     return restaurants
 

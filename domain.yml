@@ -39,9 +39,42 @@ intents:
     use_entities: true
 - not_restaurant:
     use_entities: true
+- ask_time:
+    use_entities: true
+- book_restaurant:
+    use_entities: true
+- get_no_of_people:
+    use_entities: true
+- booking_status:
+    use_entities: true
+- get_phone_num:
+    use_entities: true
+- telling_radius:
+    use_entities: true
+- dont_know_radius:
+    use_entities: true
+- telling_category:
+    use_entities: true
+- dont_know_category:
+    use_entities: true
+- telling_establishment:
+    use_entities: true
+- dont_know_establishment:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- not_to_book:
+    use_entities: true
 entities:
 - cuisine
 - location
+- time
+- no_of_people
+- phone_num
+- radius
+- category
+- establishment
+- Category
 slots:
   cuisine:
     type: rasa.shared.core.slots.TextSlot
@@ -58,6 +91,41 @@ slots:
     initial_value: null
     auto_fill: true
     influence_conversation: true
+  no_of_people:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  phone_num:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  radius:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  category:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  establishment:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  time:
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_greet:
   - text: Hi, i am restaurant-bot.
@@ -100,8 +168,43 @@ responses:
   - text: Sorry,I cannot find the results for the cuisine you mentioned.May be you can visit our restaurant for more information.
   utter_sorry_location:
   - text: Sorry,our sevice is not available for the location that you provided.
+  utter_rephrase:
+  - text: Sorry i cannot understand you. can you try rephrasing the sentence?
+  utter_default:
+  - text: Sorry,i can't understand you.
+  utter_time:
+  - text: It is {time}.
+  utter_ask_phone_num:
+  - text: May i know your phone number to book the restaurant?
+  utter_ask_no_of_people:
+  - text: May i know for how many people should i book?
+  utter_booked:
+  - text: I have booked for {no_of_people} people to the number {phone_num}.
+  utter_ask_num_for_status:
+  - text: May i know your phone number to check your booking status?
+  utter_status_available:
+  - text: Booking confirmed for 5 people.
+  utter_no_booking:
+  - text: No booking is available for the number {phone_num}.
+  utter_ask_booking:
+  - text: Do you want to book a restaurant?
+  utter_ask_radius:
+  - text: It would be great if you can provide around what radius you want to check restaurants (in meters).
+  utter_ask_category:
+  - text: May i know if you are interested in any category?
+  utter_ask_establishment:
+  - text: Is there any establishment you were interested in?
 actions:
 - action_custom_cuisine
 - action_find_restaurants
-forms: {}
+- action_check_booking
+- action_book_restaurant
+forms:
+  restaurant_form:
+    no_of_people:
+    - entity: no_of_people
+      type: from_entity
+    phone_num:
+    - entity: phone_num
+      type: from_entity
 e2e_actions: []

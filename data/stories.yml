@@ -18,7 +18,7 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
-- story: Happy Path 1
+- story: Happy Path 1 with location and cuisine in one intent
   steps:
   - intent: greet
   - action: utter_greet
@@ -32,49 +32,52 @@ stories:
     - cuisine: Indian
   - slot_was_set:
     - location: hyderabad
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
   - intent: thankyou
   - action: utter_welcome
-  - intent: goodbye
-  - action: utter_goodbye
-- story: Happy path 2 with full info of bot
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: what_is_your_name
-  - action: utter_what_is_your_name
-  - intent: what_can_you_do
-  - action: utter_what_can_you_do
-  - intent: restaurant
-  - action: utter_ask_location
-  - intent: ask_location
-    entities:
-    - location: kadapa
-  - slot_was_set:
-    - location: kadapa
-  - action: utter_ask_cuisine
-  - intent: ask_cuisine
-    entities:
-    - cuisine: indian
-  - slot_was_set:
-    - location: indian
-  - action: action_custom_cuisine
-  - slot_was_set:
-    - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
-  - action: action_find_restaurants
-  - slot_was_set:
-    - cuisine: null
   - intent: goodbye
   - action: utter_goodbye
 - story: Happy path 3 with cuisine and location in one input
@@ -87,36 +90,52 @@ stories:
     - cuisine: Indian
   - slot_was_set:
     - location: hyderabad
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
   - intent: goodbye
   - action: utter_goodbye
-- story: Happy path 4 with cuisine and location in one input
-  steps:
-  - intent: ask_location
-    entities:
-    - cuisine: Indian
-    - location: hyderabad
-  - slot_was_set:
-    - cuisine: Indian
-  - slot_was_set:
-    - location: hyderabad
-  - action: action_custom_cuisine
-  - slot_was_set:
-    - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
-  - action: action_find_restaurants
-  - slot_was_set:
-    - cuisine: null
 - story: Happy path 5 with cuisine first then location
   steps:
   - intent: greet
@@ -132,15 +151,50 @@ stories:
     - location: pune
   - slot_was_set:
     - location: pune
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
   - intent: goodbye
   - action: utter_goodbye
 - story: Happy path 6 with cuisine and location in one input with bot info
@@ -159,18 +213,53 @@ stories:
     - cuisine: Indian
   - slot_was_set:
     - location: hyderabad
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
   - intent: goodbye
   - action: utter_goodbye
-- story: Sad path 3 with no loaction preferance
+- story: Sad path 3 with no location preferance
   steps:
   - intent: greet
   - action: utter_greet
@@ -184,7 +273,7 @@ stories:
   - action: utter_dont_know_location
   - intent: goodbye
   - action: utter_goodbye
-- story: Sad path 4 with no loaction preferance
+- story: Sad path 4 with no location preferance
   steps:
   - intent: greet
   - action: utter_greet
@@ -229,12 +318,35 @@ stories:
     - cuisine: italian
   - slot_was_set:
     - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
   - action: action_find_restaurants
   - intent: thankyou
   - action: utter_welcome
@@ -243,15 +355,50 @@ stories:
   - intent: ask_cuisine
     entities:
     - cuisine: chinese
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
   - intent: thankyou
   - action: utter_welcome
   - intent: goodbye
@@ -277,15 +424,50 @@ stories:
     - cuisine: italian
   - slot_was_set:
     - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
   - intent: thankyou
   - action: utter_welcome
   - intent: goodbye
@@ -302,14 +484,50 @@ stories:
   - action: action_custom_cuisine
   - intent: ask_cuisine
   - action: action_custom_cuisine
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
   - intent: goodbye
   - action: utter_goodbye
 - story: Sad path 6 with not restaurant intent
@@ -356,7 +574,7 @@ stories:
   - action: utter_dont_know_location
   - intent: goodbye
   - action: utter_goodbye
-- story: Happy path 10 with best location
+- story: Happy path 10 with best cuisine
   steps:
   - intent: greet
   - action: utter_greet
@@ -369,15 +587,50 @@ stories:
     - location: hyderabad
   - action: utter_ask_cuisine
   - intent: no_cuisine_preference
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
   - intent: goodbye
   - action: utter_goodbye
 - story: Sad path 9 with  no cuisine preference
@@ -393,63 +646,52 @@ stories:
     - location: hyderabad
   - action: utter_ask_cuisine
   - intent: no_cuisine_preference
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
   - intent: deny
   - action: utter_not_best_cuisine
-  - intent: goodbye
-  - action: utter_goodbye
-- story: Happy path 11 with setting cuisine 2 times
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: restaurant
-  - action: utter_ask_location
-  - intent: ask_location
-    entities:
-    - location: hyderabad
-  - slot_was_set:
-    - location: hyderabad
-  - action: utter_ask_cuisine
-  - intent: ask_cuisine
-    entities:
-    - cuisine: italian
-  - slot_was_set:
-    - cuisine: italian
-  - action: action_custom_cuisine
-  - slot_was_set:
-    - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
-  - action: action_find_restaurants
-  - intent: thankyou
-  - action: utter_welcome
-  - intent: ask_cuisine
-  - action: utter_ask_cuisine
-  - intent: ask_cuisine
-    entities:
-    - cuisine: chinese
-  - slot_was_set:
-    - cuisine: chinese
-  - action: action_custom_cuisine
-  - slot_was_set:
-    - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
-  - action: action_find_restaurants
-  - slot_was_set:
-    - cuisine: null
-  - intent: thankyou
-  - action: utter_welcome
   - intent: goodbye
   - action: utter_goodbye
 - story: Story of first custom find restaurants
@@ -469,16 +711,635 @@ stories:
   - intent: ask_cuisine
     entities:
     - cuisine: indian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - urba Tadka
-      - Goilas Butter chicken
-      - Shiv sagar
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
-- story: Happy path 12
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+- story: ask time
+  steps:
+  - intent: ask_time
+  - action: utter_time
+- story: Booking restaurant and checking status
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '8123456789'
+  - slot_was_set:
+    - phone_num: '8123456789'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: booking_status
+  - action: utter_ask_num_for_status
+  - intent: get_phone_num
+    entities:
+    - phone_num: '8123456789'
+  - slot_was_set:
+    - phone_num: '8123456789'
+  - action: action_check_booking
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Booking restaurant using forms
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: book_restaurant
+  - action: restaurant_form
+  - active_loop: restaurant_form
+  - slot_was_set:
+    - requested_slot: no_of_people
+  - slot_was_set:
+    - no_of_people: '5'
+  - slot_was_set:
+    - requested_slot: phone_num
+  - slot_was_set:
+    - no_of_people: '9876543211'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_booked
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy Path with radius,category,Establishment
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy path with category and establishemnt
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: dont_know_radius
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Breakfast
+  - slot_was_set:
+    - category: Breakfast
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - category: Cafe
+  - slot_was_set:
+    - category: Cafe
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy path with establishemnt
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: dont_know_radius
+  - action: utter_ask_category
+  - intent: dont_know_category
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - category: Cafe
+  - slot_was_set:
+    - category: Cafe
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy path without radius, category, establishment
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: dont_know_radius
+  - action: utter_ask_category
+  - intent: dont_know_category
+  - action: utter_ask_establishment
+  - intent: dont_know_establishment
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy Path with radius,category
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: dont_know_establishment
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy Path with radius,Establishment
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: dont_know_category
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy Path with radius
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: dont_know_category
+  - action: utter_ask_establishment
+  - intent: dont_know_establishment
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy Path with category
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: dont_know_radius
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: dont_know_establishment
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy path  with full info of bot
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_is_your_name
+  - action: utter_what_is_your_name
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: kadapa
+  - slot_was_set:
+    - location: kadapa
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: indian
+  - slot_was_set:
+    - location: indian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy Path 1 location and cuisine in one intent.
   steps:
   - intent: greet
   - action: utter_greet
@@ -486,29 +1347,1056 @@ stories:
   - action: utter_what_can_you_do
   - intent: ask_location
     entities:
-    - cuisine: italian
+    - cuisine: Indian
     - location: hyderabad
   - slot_was_set:
-    - cuisine: italian
+    - cuisine: Indian
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
     - restaurants:
-      - Bawarchi
-      - Cafe Bahar
-      - Shah Ghouse Hotel & Restaurant
-      - Lucky Restaurant
-      - Hotel Shadab
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
-  - intent: ask_cuisine
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
     entities:
-    - cuisine: south indian
+    - phone_num: '9876545678'
   - slot_was_set:
-    - cuisine: south indian
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy Path 1 evrything in one intent.
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: ask_location
+    entities:
+    - cuisine: Indian
+    - location: hyderabad
+    - radius: '5000'
+    - category: Lunch
+    - establishment: Casual Dining
+  - slot_was_set:
+    - cuisine: Indian
+  - slot_was_set:
+    - location: hyderabad
+  - slot_was_set:
+    - radius: '5000'
+  - slot_was_set:
+    - category: Lunch
+  - slot_was_set:
+    - establishment: Casual Dining
   - action: action_custom_cuisine
   - slot_was_set:
-    - cuisine: null
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
   - action: action_find_restaurants
   - slot_was_set:
     - cuisine: null
+  - action: utter_ask_booking
+  - intent: book_restaurant
+  - action: utter_ask_phone_num
+  - intent: get_phone_num
+    entities:
+    - phone_num: '9876545678'
+  - slot_was_set:
+    - phone_num: '9876545678'
+  - action: utter_ask_no_of_people
+  - intent: get_no_of_people
+    entities:
+    - no_of_people: '4'
+  - slot_was_set:
+    - no_of_people: '4'
+  - action: utter_booked
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Happy Path with location and cuisine in one intent an no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: ask_location
+    entities:
+    - cuisine: Indian
+    - location: hyderabad
+  - slot_was_set:
+    - cuisine: Indian
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy path with cuisine and location in one input and no booking
+  steps:
+  - intent: ask_location
+    entities:
+    - cuisine: Indian
+    - location: hyderabad
+  - slot_was_set:
+    - cuisine: Indian
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy path with cuisine first then location and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_cuisine
+    entities:
+    - cuisine: mexican
+  - slot_was_set:
+    - cuisine: mexican
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: pune
+  - slot_was_set:
+    - location: pune
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy path with cuisine and location in one input with bot info and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_is_your_name
+  - action: utter_what_is_your_name
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: ask_location
+    entities:
+    - cuisine: Indian
+    - location: hyderabad
+  - slot_was_set:
+    - cuisine: Indian
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy path with giving cuisine 2 times with no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: action_find_restaurants
+  - intent: thankyou
+  - action: utter_welcome
+  - intent: ask_cuisine
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: chinese
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy path with no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_is_your_name
+  - action: utter_what_is_your_name
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy path with direct location and no cuisine preference and no booking
+  steps:
+  - intent: ask_location
+    entities:
+    - location: chennai
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_when_direct_location
+  - intent: restaurant
+  - action: action_custom_cuisine
+  - intent: ask_cuisine
+  - action: action_custom_cuisine
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy path with best cuisine and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: no_cuisine_preference
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Story of first custom find restaurants with no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: chennai
+  - action: utter_ask_cuisine
+  - slot_was_set:
+    - cuisine: indian
+  - intent: ask_cuisine
+    entities:
+    - cuisine: indian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy Path with radius,category,Establishment and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy path with category and establishemnt and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: dont_know_radius
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Breakfast
+  - slot_was_set:
+    - category: Breakfast
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - category: Cafe
+  - slot_was_set:
+    - category: Cafe
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy path with establishemnt and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: dont_know_radius
+  - action: utter_ask_category
+  - intent: dont_know_category
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - category: Cafe
+  - slot_was_set:
+    - category: Cafe
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy path without radius, category, establishment and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: dont_know_radius
+  - action: utter_ask_category
+  - intent: dont_know_category
+  - action: utter_ask_establishment
+  - intent: dont_know_establishment
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy Path with radius,category and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: dont_know_establishment
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy Path with radius,Establishment and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: dont_know_category
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy Path with radius and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: dont_know_category
+  - action: utter_ask_establishment
+  - intent: dont_know_establishment
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy Path with category and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: dont_know_radius
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: dont_know_establishment
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy Path 1 location and cuisine in one intent. and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: ask_location
+    entities:
+    - cuisine: Indian
+    - location: hyderabad
+  - slot_was_set:
+    - cuisine: Indian
+  - slot_was_set:
+    - location: hyderabad
+  - action: utter_ask_radius
+  - intent: telling_radius
+    entities:
+    - radius: '3000'
+  - slot_was_set:
+    - radius: '3000'
+  - action: utter_ask_category
+  - intent: telling_category
+    entities:
+    - category: Lunch
+  - slot_was_set:
+    - category: Lunch
+  - action: utter_ask_establishment
+  - intent: telling_establishment
+    entities:
+    - establishment: Casual Dining
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Happy Path 1 evrything in one intent. and no booking
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: ask_location
+    entities:
+    - cuisine: Indian
+    - location: hyderabad
+    - radius: '5000'
+    - category: Lunch
+    - establishment: Casual Dining
+  - slot_was_set:
+    - cuisine: Indian
+  - slot_was_set:
+    - location: hyderabad
+  - slot_was_set:
+    - radius: '5000'
+  - slot_was_set:
+    - category: Lunch
+  - slot_was_set:
+    - establishment: Casual Dining
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.6'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye
+- story: Story from Conversation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant
+  - action: utter_ask_location
+  - slot_was_set:
+    - location: hyderabad
+  - intent: ask_location
+    entities:
+    - location: hyderabad
+  - action: utter_ask_cuisine
+  - slot_was_set:
+    - cuisine: italian
+  - intent: ask_cuisine
+    entities:
+    - cuisine: italian
+  - action: utter_ask_radius
+  - intent: dont_know_radius
+  - action: utter_ask_category
+  - intent: dont_know_category
+  - action: utter_ask_establishment
+  - intent: dont_know_establishment
+  - action: action_custom_cuisine
+  - slot_was_set:
+    - restaurants:
+      - 'Restaurant : Bawarchi ; Address : Plot 44, RTC Cross Road, Chikkadpally, Opposite Sandhya Theatre, Nallakunta, Hyderabad ; Phone number : 040 27634490, 040 27634494 ; User ratings : 4.3'
+      - 'Restaurant : Cafe Bahar ; Address : 3-5/815-A, Hyderguda, Basheer Bagh, Hyderabad ; Phone number : +91 9000963120, 040 23243798, 040 23237605 ; User ratings : 4.2'
+      - 'Restaurant : Shah Ghouse Hotel & Restaurant ; Address : House 9-4-86/17, Salarjung Colony, Circle 10, Tolichowki, Hyderabad ; Phone number : +91 8978935188 ; User ratings : 4.3'
+      - 'Restaurant : Lucky Restaurant ; Address : Alkapuri X Road, Inner Ring Road, Sai Nagar, Nagole, Hyderabad ; Phone number : +91 9848422003 ; User ratings : 4.2'
+      - 'Restaurant : The Roastery Coffee House ; Address : House 418, 8/2/287/12, Road 14, Banjara Hills, Hyderabad ; Phone number : +91 6309590610, +91 9505263320 ; User ratings : 4.5'
+  - action: action_find_restaurants
+  - slot_was_set:
+    - cuisine: null
+  - action: utter_ask_booking
+  - intent: not_to_book
+  - action: utter_goodbye
+  - intent: goodbye

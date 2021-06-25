@@ -22,6 +22,7 @@ nlu:
     - goodevening
     - good afternoon
     - Hi
+    - HI
 - intent: goodbye
   examples: |
     - good afternoon
@@ -161,6 +162,8 @@ nlu:
     - yeah i knwo
     - i am hungy
     - i am famished
+    - i am hungey
+    - i am hungryy
 - intent: ask_location
   examples: |
     - i am at hyderabad
@@ -203,7 +206,7 @@ nlu:
     - i am at [hyderabad](location).
     - Hey,i am in [chennai](location).
     - i am in hyderabad
-    - [Hyderabad](location)
+    - [Hyderabad]{"entity": "location", "value": "hyderabad"}
     - i am in [chennai](location)
     - jaipr
     - [jaipur](location)
@@ -214,6 +217,7 @@ nlu:
     - [hyderabad](location), [italian](cuisine)
     - [ahmedabad](location)
     - i want to eat [italian](cuisine) at [hyderabad](location)
+    - [Hyderbad](location)
 - intent: dont_know_location
   examples: |
     - i don't know my location
@@ -235,8 +239,25 @@ nlu:
     - can i look up suggestions without a location
     - i don't know
     - i am sorry i cannot do that.
-    - don't know
     - don't knwo
+- intent: dont_know_radius
+  examples: |
+    - don't know
+    - i don't know about the radius
+    - anywhere is fine
+    - i don't have any radius in my mind
+    - have no limit though
+    - no idea
+    - i have no idea
+    - i can't figure out
+    - hmmm
+    - i am ok with anywhere that is delicious
+    - help me with this
+    - like anywhere no limit
+    - nothing in special
+    - No,i am not
+    - it's ok if you go with something near.
+    - I have no idea about radius
 - intent: ask_cuisine
   examples: |
     - i am looking for [italian](cuisine) food
@@ -324,6 +345,225 @@ nlu:
     - find something in my current location
     - is it ok to turn on google maps
     - near my location
+- intent: not_restaurant
+  examples: |
+    - I thought it is a flight booking bot.
+    - I thought it is a hotel booking bot.
+    - i didn't expect it to be restaurant bot.
+    - not a airlines bot?
+    - isn't it a hotel booking bot?
+    - isn't it a flight booking bot?
+    - i thought it is a travel agency.
+- intent: book_restaurant
+  examples: |
+    - yes
+    - do that
+    - yeah,i want to.
+    - i want to book a restaurant.
+    - i want to book a restaurant now.
+    - can i book the restaurant
+    - book the restaurant
+    - where can i book a restaurant?
+    - how to book a restaurant.
+    - i need to book a restaurant.
+    - help me to book a restaurant.
+    - hey,i should book a restaurant.
+    - it's my birthday i want to book a restaurant.
+    - it's my anniversary i want to book a restaurant.
+    - there's a special today, i want to book a restaurant.
+    - got guests, need to book restaurants.
+    - restaurant booking.
+    - book a restaurant.
+    - yes i want to
+- intent: not_to_book
+  examples: |
+    - no i don't want to
+    - no i am not interested
+    - i am not interested
+    - hmm, i don't want to book now
+    - hmm, i don't want to now
+    - not now
+    - i am just asking for restaurants no need to book
+    - no need to book
+    - no need to book a restaurant
+    - i am fine no need to book
+    - no,i am fine with this
+    - no, i am fine
+    - i am fine
+    - actually i just want to find delicious restaurant. No need to book.
+    - restaurant booking,hmm.No i am good.
+    - no
+    - no need
+    - no i don't wnat to
+- intent: get_phone_num
+  examples: |
+    - i want to book with [9128916789](phone_num).
+    - i want you to book with [9128916789](phone_num).
+    - [7829921345](phone_num)
+    - My number is [7829921345](phone_num).
+    - My phone number is [7829921345](phone_num).
+    - my no is [9128916789](phone_num).
+    - number [9128916789](phone_num).
+    - it is [8341390229](phone_num).
+    - go with [8341390229](phone_num).
+    - hmm [8341390229](phone_num).
+    - book it with [7829921345](phone_num)
+    - help me book with [7829921345](phone_num).
+    - [7829921345](phone_num) is it ok?
+    - phone number [7829921345](phone_num).
+    - [9377825412](phone_num) this is my number.
+    - This is my number [9377825412](phone_num).
+    - you can use this [9377825412](phone_num).
+    - [9876545678](phone_num) is my no
+- intent: get_no_of_people
+  examples: |
+    - i want to book for [3](no_of_people) people.
+    - book for [3](no_of_people) people.
+    - go with [3](no_of_people) people.
+    - i have got [3](no_of_people) pals with me.
+    - [7](no_of_people).
+    - help me book for [9](no_of_people).
+    - got [5](no_of_people) guests.
+    - book for [10](no_of_people).
+    - book for [9](no_of_people) people.
+    - please book for [5](no_of_people) people.
+    - make it available for [4](no_of_people).
+    - need [6](no_of_people) seats.
+    - Book for [4](no_of_people) people
+- intent: booking_status
+  examples: |
+    - i want know my booking status.
+    - i need booking status.
+    - may i know the booking status?
+    - may i know the status of the booking that i made?
+    - how is the booking status of mine?
+    - hey , booking status plz.
+    - tell me booking status.
+    - status of the booking.
+    - Help me find the booking status.
+    - booking status.
+    - want to know my booking status.
+    - find the booking status.
+    - how about showing me my booking status.
+    - how's my booking going on.
+- intent: telling_radius
+  examples: |
+    - around [2000](radius) meters.
+    - around [2000](radius) m.
+    - [3000](radius) m.
+    - [3000](radius) meters.
+    - i want restaurants around [3000](radius) square meters.
+    - i want restaurants around [3000](radius) sq meters.
+    - is there any restaurants around [4000](radius) meters.
+    - is there any restaurants around [4000](radius) m.
+    - is there any restaurants around [4000](radius) sq meters.
+    - is there any restaurants around [4000](radius) sq meters from my place.
+    - its ok upto [5000](radius) meters.
+    - hmm something around [2000](radius) meters.
+    - anything around [4000](radius) meters from me.
+    - anything around [4000](radius) sq meters from me.
+    - can it be as far as [6000](radius) meters
+    - can it be as far as [6000](radius) m.
+    - it can be good if it's close like [2000](radius) m cuz i am hungry.
+    - it can be good if it's close like [2000](radius) meters cuz i am hungry.
+    - [3000](radius) meters
+    - around [5000](radius) meters
+    - [6000](radius) meters
+    - [5000](radius) meters
+- intent: telling_category
+  examples: |
+    - i want to check [Delivery](category).
+    - i want to check [Dine-Out](category).
+    - category hmmm [Nightlife](category).
+    - what about [Catching-Up](Category).
+    - i want to eat [Breakfast](category).
+    - i want to eat [Pubs & Bars](category).
+    - i want to eat [Takeaway](category).
+    - It's [Lunch](category) time right.
+    - It's [Dinner](category) time right.
+    - I want to order [Takeaway](category)
+    - something to eat in [Pubs & Bars](category)
+    - i am short with money how about [Pocket Friendly Delivery](category)
+    - i am at club help me something like [Clubs & Lounges](category)
+    - i want to drink something good how about a [Cafe](category)
+    - it's been a while i want to look into [DailyMenus](category).
+    - it's been a while i want to look into [Takeaway](category).
+    - hmm is there any thing like [Dine-Out](category) it's been a while.
+    - i want to order [Delivery](category).
+    - It's [Lunch](category) time
+    - [Breakfast](category)
+    - hmmm, [Dinner](category)
+    - [Lunch](category)
+- intent: dont_know_category
+  examples: |
+    - i don't have anything particular to order.
+    - any category is fine.
+    - any category is fine though.
+    - anything is good.
+    - help me choose some category.
+    - i am good with anything.
+    - you do something.
+    - how can you ask such thing.
+    - like i don't have any idea of what to choose.
+    - find me something good.
+    - i have no idea what category to choose.
+    - it's a difficult question though.
+    - nothing in particular.
+    - Ayooo i don't know about that.
+    - anything will do.
+    - can't figure out.
+    - don't know any cateogory
+- intent: telling_establishment
+  examples: |
+    - something like [Quick Bites](establishment)
+    - Can you find a [Bakery](establishment) for me.
+    - i want have [Casual Dining](establishment).
+    - i am thinking of [Café](establishment)
+    - i am carving for sweets how about a [Sweet Shop](establishment).
+    - i want to eat something in a [Dhaba](establishment) like place.
+    - [Bar](establishment)
+    - [Fine Dining](establishment) can do.
+    - [Food Court](establishment) is best.
+    - i want ot check [Confectionery](establishment)
+    - i want to look into [Pub](establishment).
+    - ahhh [Microbrewery](establishment)
+    - Find me a [Lounge](establishment)
+    - a [Beverage Shop](establishment)
+    - traditional like [Bhojanalya](establishment)
+    - i am thinking of a [Cakery](establishment)
+    - [Kiosk](establishment) ??
+    - [Pop up](establishment) can do .
+    - Hmmm [Casual Dining](establishment)
+    - [Cafe](category)
+    - [Casual Dining](establishment)
+    - [Casual dining](establishment)
+- intent: dont_know_establishment
+  examples: |
+    - i don't have anything particular to think of.
+    - any establishment is fine.
+    - any establishment is fine though.
+    - anything is good.
+    - help me choose some establishment.
+    - i am good with anything.
+    - don't know what to choose
+    - dont know
+    - you can help me with establishment.
+    - find me something though.
+    - i have no idea what establishment to choose.
+    - nothing in particular.
+    - i don't know about that.
+    - anything will do.
+    - never heard of it
+    - can't figure out.
+    - i dont know about that
+- intent: ask_time
+  examples: |
+    - what is the time?
+    - what is the time right now?
+    - what day is it today?
+    - what's today?
+    - what's yesterday?
+    - what day is it tommorow?
 - synonym: mumbai
   examples: |
     - mumbei
@@ -388,3 +628,6 @@ nlu:
 - synonym: korean
   examples: |
     - Korean
+- regex: phone_num
+  examples: |
+    - ^[789]\d{9}$
